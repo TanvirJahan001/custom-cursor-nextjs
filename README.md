@@ -1,36 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Modern Animated Portfolio Website
 
-## Getting Started
+A cutting-edge portfolio website built with Next.js, featuring modern animations, 3D elements, and a responsive design. This project showcases the latest web technologies and design trends.
 
-First, run the development server:
+## 🌟 Features
 
+### 🎨 Modern Design Elements
+- **Glassmorphism Effects**
+  - Transparent navbar with blur effect
+  - Smooth backdrop filters
+  - Dynamic border effects
+
+- **Typography**
+  - Responsive text scaling
+  - Gradient text effects
+  - Custom font implementations
+  - Smooth text animations
+
+- **Color Scheme**
+  - Dynamic gradient backgrounds
+  - Animated color transitions
+  - Modern color palette with indigo, purple, and pink gradients
+
+### 🎭 Animations
+
+- **Navigation**
+  - Smooth scroll animations
+  - Hover effects on menu items
+  - Mobile menu transitions
+  - Animated hamburger menu
+
+- **Hero Section**
+  - Text reveal animations
+  - Parallax scrolling effects
+  - Gradient text animations
+  - Button hover effects
+  - 3D floating elements
+
+- **Interactive Elements**
+  - Custom animated cursor
+  - Hover state animations
+  - Scale transitions
+  - Loading animations
+
+### 📱 Responsive Features
+- Mobile-first design approach
+- Adaptive layouts for all screen sizes
+- Touch-friendly interactions
+- Responsive typography
+- Collapsible mobile menu
+
+### 🛠 Technical Features
+- Server-side rendering with Next.js
+- Framer Motion animations
+- GSAP animations
+- Three.js 3D elements
+- Tailwind CSS styling
+- Custom cursor implementation
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/TanvirJahan001/custom-cursor-nextjs
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📦 Dependencies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js - ^15.2.2
+- React - ^19.0.0
+- Framer Motion - ^12.5.0
+- GSAP - ^3.12.7
+- Three.js - ^0.174.0
+- Tailwind CSS - ^4.0.0
+- @heroicons/react - ^2.2.0
+- @react-three/drei - ^10.0.4
+- @react-three/fiber - ^9.1.0
 
-## Learn More
+## 🎨 Components
 
-To learn more about Next.js, take a look at the following resources:
+### Navbar
+- Transparent to solid transition on scroll
+- Responsive mobile menu
+- Animated links
+- Glassmorphism effect
+- Custom gradient logo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Hero Section
+- Large animated text
+- Gradient text effects
+- Animated CTA buttons
+- 3D floating elements
+- Parallax scrolling
+- Custom cursor integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Features Section
+- Animated cards
+- Icon integrations
+- Hover effects
+- Responsive grid layout
 
-## Deploy on Vercel
+### About Section
+- Animated statistics
+- Gradient text
+- Responsive layout
+- Interactive elements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contact Section
+- Form animations
+- Interactive input fields
+- Gradient effects
+- Social media integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Customization
+
+### Colors
+The color scheme can be customized in `tailwind.config.js`:
+- Primary colors: Indigo, Purple, Pink
+- Background: Black
+- Text: White, Gray shades
+
+### Animations
+Animation settings can be adjusted in individual components:
+- Duration
+- Timing functions
+- Delay
+- Spring configurations
+
+## 📱 Responsive Breakpoints
+
+- Mobile: 0-640px
+- Tablet: 641-768px
+- Laptop: 769-1024px
+- Desktop: 1025px+
+
+## 🔧 Performance Optimizations
+
+- Image optimization
+- Code splitting
+- Lazy loading
+- CSS optimization
+- Animation performance
+
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
