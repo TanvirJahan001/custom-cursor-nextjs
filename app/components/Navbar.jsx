@@ -1,7 +1,7 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -66,8 +66,8 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Link 
               href="/" 
@@ -76,9 +76,9 @@ const Navbar = () => {
               }`}
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500">
-                Ash
+                Ash{" "}
               </span>
-              <span className="relative ml-2">
+              <span className="relative">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
                   Sams
                 </span>
@@ -87,23 +87,26 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="group p-2 rounded-lg focus:outline-none hover:bg-white/10 transition-colors duration-300"
+              className="group p-2 rounded-lg focus:outline-none hover:bg-white/30 transition-colors duration-300"
+              aria-label="Toggle menu"
             >
               <div className="relative w-6 h-5">
                 <span 
-                  className={`absolute h-0.5 w-full transform transition-all duration-300 bg-white
+                  className={`absolute h-0.5 w-full transform transition-all duration-300 
+                    ${scrolled ? 'bg-black' : 'bg-white'}
                     ${isOpen ? 'rotate-45 top-2' : 'top-0'}`}
                 />
                 <span 
-                  className={`absolute h-0.5 w-full transform transition-all duration-300 bg-white
+                  className={`absolute h-0.5 w-full transform transition-all duration-300 
+                    ${scrolled ? 'bg-black' : 'bg-white'}
                     ${isOpen ? 'opacity-0' : 'top-2'}`}
                 />
                 <span 
-                  className={`absolute h-0.5 w-full transform transition-all duration-300 bg-white
+                  className={`absolute h-0.5 w-full transform transition-all duration-300 
+                    ${scrolled ? 'bg-black' : 'bg-white'}
                     ${isOpen ? '-rotate-45 top-2' : 'top-4'}`}
                 />
               </div>
@@ -133,39 +136,43 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
-            className="md:hidden overflow-hidden bg-black/20 backdrop-blur-lg border-t border-white/10"
-          >
-            <motion.div className="px-4 py-4 space-y-2">
-              {links.map((link) => (
-                <motion.div
-                  key={link.href}
-                  variants={itemVariants}
-                  className="transform origin-left"
-                >
-                  <Link
-                    href={link.href}
-                    className="block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 text-white hover:bg-white/10 relative overflow-hidden group"
-                    onClick={() => setIsOpen(false)}
+          {/* Mobile menu button */}
+          
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className={`absolute text-center top-full left-0 right-0 md:hidden overflow-hidden backdrop-blur-lg border-t border-white/10 rounded-b-2xl ${scrolled 
+                ? 'bg-black/50' 
+                : 'bg-white/10'
+              }`}
+            >
+              <motion.div className="px-4 py-4 space-y-2">
+                {links.map((link) => (
+                  <motion.div
+                    key={link.href}
+                    variants={itemVariants}
+                    className="transform origin-left"
                   >
-                    <span className="relative z-10">{link.text}</span>
-                    <span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={link.href}
+                      className="block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 text-white hover:bg-white/10 relative overflow-hidden group"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="relative z-10">{link.text}</span>
+                      <span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 };

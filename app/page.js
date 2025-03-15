@@ -1,10 +1,10 @@
 'use client';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import FeaturesSection from './components/FeaturesSection';
+import { useEffect } from 'react';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
-import { useEffect } from 'react';
+import FeaturesSection from './components/FeaturesSection';
+import HeroSection from './components/HeroSection';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <FeaturesSection />
